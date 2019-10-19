@@ -5,6 +5,12 @@ h1{
   padding: 0px;
 }
 
+p{
+  color: white;
+  text-align: center;
+  font-size: 10px;
+}
+
 body{
   background-image: url("http://macprovid.vo.llnwd.net/o43/hub/media/1079/6836/cp_545_Figure_2_-_Step_1.jpg");
   background-repeat: repeat;
@@ -155,7 +161,7 @@ body {
   padding: 0em;
   display: grid;
   grid-gap: 0em 0em;
-  margin: 4em;
+  margin: 0em;
   justify-content: center;
   grid-template-columns: repeat(3, 0.5fr);
 }
@@ -176,9 +182,15 @@ body {
 }
 .one3 {
   grid-area: one3;
+  background-image: url("../img/giraffevertical.jpg");
+  background-size: cover;
 }
 .two3 {
   grid-area: two3;
+  background-color: black;
+
 }
 .three3 {
   grid-area: three3;
+  background-image: url("../img/cheetavertical.jpg");
+  background-size: cover;
