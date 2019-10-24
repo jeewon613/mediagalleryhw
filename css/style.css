@@ -329,16 +329,16 @@ body {
       }
       /*-- grid media queries--*/
       @media screen and (min-width: 550px) { /*-- at screens between 550 and 767 --*/
-        .main-grid {grid-template-columns: repeat(2, 1fr);}  /*-- 2 columnns --*/
+        .main-grid {grid-template-columns: repeat(1, 1fr);}  /*-- 2 columnns --*/
       }
       @media screen and (min-width: 768px) {/*-- at screens between 768 and 989 --*/
-        .main-grid {grid-template-columns: repeat(3, 1fr);} /*-- 3 columnns --*/
+        .main-grid {grid-template-columns: repeat(1, 1fr);} /*-- 3 columnns --*/
       }
       @media screen and (min-width: 990px) {/*-- at screens between 990 and 1271 --*/
-        .main-grid {grid-template-columns: repeat(4, 1fr);} /*-- 4 columnns --*/
+        .main-grid {grid-template-columns: repeat(2, 1fr);} /*-- 4 columnns --*/
       }
       @media screen and (min-width: 1280px) {/*-- at screens 1280 and above --*/
-        .main-grid {grid-template-columns: repeat(4, 1fr);} /*-- 4 columnns --*/
+        .main-grid {grid-template-columns: repeat(3, 1fr);} /*-- 4 columnns --*/
       }
       /*-- media card styles -- */
       .main-grid-item {
@@ -362,9 +362,6 @@ body {
       .seven .thumb {background-image: url('https://picsum.photos/300/200/?image=71');}
       .eight .thumb {background-image: url('https://picsum.photos/300/200/?image=32');}
       .nine .thumb {background-image: url('https://picsum.photos/300/200/?image=19');}
-      .ten .thumb {background-image: url('https://picsum.photos/300/200/?image=06');}
-      .eleven .thumb {background-image: url('https://picsum.photos/300/200/?image=23');}
-      .twelve .thumb {background-image: url('https://picsum.photos/300/200/?image=60');}
       /*----*/
       .card-content {
         padding: 0 .5em .7em .5em;
@@ -378,12 +375,7 @@ body {
         align-self: flex-start; /*-- positions at beginning --*/
         color: var(--text);
       }
-      .card-text {
-        font-size: .80em;
-        line-height: 1.2;
-        align-self: flex-start;
-        color: var(--text);
-      }
+
       button.card-more {
         background: transparent;
         padding: .45em .7em .4em .7em;
