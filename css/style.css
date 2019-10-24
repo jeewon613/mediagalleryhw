@@ -333,6 +333,7 @@ body {
 
       button.card-more {
         background: transparent;
+        color: lightgray;
         padding: .45em .7em .4em .7em;
         border-radius: 200px;
         font-size: .7em;
@@ -340,11 +341,7 @@ body {
         cursor: pointer;
         text-transform: uppercase;
       }
-      button.card-more, button.card-more:visited {
-        color: var(--prime);
-        border: 1.5px solid var(--prime);
-        transition: all 250ms ease-in-out;
-      }
+
       button.card-more:hover, button.card-more:active {
         color: var(--accent);
         border-color: var(--accent);
@@ -426,4 +423,11 @@ body {
 
 i.fas { /*-- adds a little padding left and right on fontawesome icons --*/
   padding: 0 .33em;
+}
+
+footer {
+  background-color: black;
+  padding: .25rem;
+  text-align: center;
+
 }
