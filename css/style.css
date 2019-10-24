@@ -274,58 +274,14 @@ body {
   }
 }
 
-
-
-
-.grid-container3 {
-  border: 1px solid black;
-  padding: 0em;
-  display: grid;
-  grid-gap: 0em 0em;
-  margin: 0em;
-  justify-content: center;
-  grid-template-columns: repeat(3, 0.5fr);
-}
-
-
-.grid-item3 {
-  height: auto;
-  padding: 0em;
-  border: 1px solid black;
-  background-color:black;
-  justify-content:;
-}
-
-.grid-container3 {
-  grid-template-areas:
-                      "one3 two3 three3";
-
-}
-.one3 {
-  grid-area: one3;
-  background-image: url("../img/giraffevertical.jpg");
-  background-size: cover;
-}
-.two3 {
-  grid-area: two3;
-  background-color: black;
-
-}
-.three3 {
-  grid-area: three3;
-  background-image: url("../img/cheetavertical.jpg");
-  background-size: cover;
-}
-
-
-
-
 .main-grid {
-        margin-top: 3.5rem; /*-- adds space above grid wrap --*/
-        padding: .5rem; /*-- adds padding inside grid wrap --*/
+        margin: 3em;
+        padding: 3em; /*-- adds padding inside grid wrap --*/
         display: grid; /*-- sets display mode --*/
-        grid-gap: 1.5rem; /*-- creates gutters --*/
+        grid-gap: 2rem; /*-- creates gutters --*/
         grid-template-columns: 1fr; /*-- default mobile layout is 1-column--*/
+        background: url("https://image.freepik.com/free-photo/sand-texture-beach-as-background_63047-198.jpg");
+        border-radius: 4px 4px 0 0; /*-- rounds top-left and top-right edges --*/
       }
       /*-- grid media queries--*/
       @media screen and (min-width: 550px) { /*-- at screens between 550 and 767 --*/
@@ -344,24 +300,24 @@ body {
       .main-grid-item {
         border-radius: 4px;  /*-- rounds borders --*/
         padding: .5em; /*-- adds space inside --*/
-        background-color: var(--bg);
+        background-color: black;
       }
       .thumb {
-        padding-bottom: 56%; /*-- creates ~16:9 ratio--*/
+        padding-bottom: 90%; /*-- creates ~16:9 ratio--*/
         background-size: cover; /*--sets image to cover background --*/
         background-position: center center; /*-- positions image horiz. and vert. center --*/
         border-radius: 4px 4px 0 0; /*-- rounds top-left and top-right edges --*/
       }
       /*-- Card Backgrounds --*/
-      .one .thumb {background-image: url('https://picsum.photos/300/200/?image=09');}
-      .two .thumb {background-image: url('https://picsum.photos/300/200/?image=24');}
-      .three .thumb {background-image: url('https://picsum.photos/300/200/?image=35');}
-      .four .thumb {background-image: url('https://picsum.photos/300/200/?image=44');}
-      .five .thumb {background-image: url('https://picsum.photos/300/200/?image=54');}
-      .six .thumb {background-image: url('https://picsum.photos/300/200/?image=59');}
-      .seven .thumb {background-image: url('https://picsum.photos/300/200/?image=71');}
-      .eight .thumb {background-image: url('https://picsum.photos/300/200/?image=32');}
-      .nine .thumb {background-image: url('https://picsum.photos/300/200/?image=19');}
+      .one .thumb {background-image:  url("../img/giraffesunset.jpg");}
+      .two .thumb {background-image: url('../img/antelope.jpg');}
+      .three .thumb {background-image: url('../img/biting.jpg');}
+      .four .thumb {background-image: url('../img/liondrinking.jpg');}
+      .five .thumb {background-image: url('../img/bull.jpg');}
+      .six .thumb {background-image: url('../img/zebrasunset.jpg');}
+      .seven .thumb {background-image: url('../img/elephant.jpg');}
+      .eight .thumb {background-image: url('../img/guy.jpg');}
+      .nine .thumb {background-image: url('../img/tour.jpg');}
       /*----*/
       .card-content {
         padding: 0 .5em .7em .5em;
@@ -370,10 +326,9 @@ body {
         align-items: center; /*-- vertically centers card content --*/
       }
       .card-title {
-        margin: 1rem 0 0 0;
         text-transform: uppercase; /*--all caps text --*/
-        align-self: flex-start; /*-- positions at beginning --*/
-        color: var(--text);
+        align-self: center; /*-- positions at beginning --*/
+        color: lightgray;
       }
 
       button.card-more {
@@ -412,7 +367,7 @@ body {
          color: var(--text);
          margin: 1rem auto;
          padding: 1em;
-         width: 92%;
+         width: 70%;
          border-radius: 4px;
          animation: fadein .3s ease-in-out; /*-- sets animation properties: name, duration, easing --*/
       }
@@ -444,19 +399,20 @@ body {
         grid-gap: 2em;
       }
       .eg-text {
-        align-self: center;
+        justify-content: center;
       }
       .eg-text h3 {
         margin-top: 0;
         padding-top: 0;
       }
       .modal-body img {
-        margin-bottom: 1.5em;
-        width: 100%;
-        height: auto;
+        margin-bottom: 0.5em;
+        width: 75%;
+        height: 75%;
+        align-self: center;
       }
       @media screen and (min-width: 1280px) { /*-- better modal display on largest screens --*/
-        .modal-body {grid-template-columns: 7fr 5fr;}
+        .modal-body {grid-template-columns: 1fr;}
 
       }
 
