@@ -319,46 +319,163 @@ body {
 
 
 
-.grid-container2 {
-    padding: 0em;
-    display: grid;
-    grid-gap: 0em 0em;
-    margin: 0em;
-    justify-content: center;
-    grid-template-columns: repeat(2, 1fr);
-  }
 
+.main-grid {
+        margin-top: 3.5rem; /*-- adds space above grid wrap --*/
+        padding: .5rem; /*-- adds padding inside grid wrap --*/
+        display: grid; /*-- sets display mode --*/
+        grid-gap: 1.5rem; /*-- creates gutters --*/
+        grid-template-columns: 1fr; /*-- default mobile layout is 1-column--*/
+      }
+      /*-- grid media queries--*/
+      @media screen and (min-width: 550px) { /*-- at screens between 550 and 767 --*/
+        .main-grid {grid-template-columns: repeat(2, 1fr);}  /*-- 2 columnns --*/
+      }
+      @media screen and (min-width: 768px) {/*-- at screens between 768 and 989 --*/
+        .main-grid {grid-template-columns: repeat(3, 1fr);} /*-- 3 columnns --*/
+      }
+      @media screen and (min-width: 990px) {/*-- at screens between 990 and 1271 --*/
+        .main-grid {grid-template-columns: repeat(4, 1fr);} /*-- 4 columnns --*/
+      }
+      @media screen and (min-width: 1280px) {/*-- at screens 1280 and above --*/
+        .main-grid {grid-template-columns: repeat(4, 1fr);} /*-- 4 columnns --*/
+      }
+      /*-- media card styles -- */
+      .main-grid-item {
+        border-radius: 4px;  /*-- rounds borders --*/
+        padding: .5em; /*-- adds space inside --*/
+        background-color: var(--bg);
+      }
+      .thumb {
+        padding-bottom: 56%; /*-- creates ~16:9 ratio--*/
+        background-size: cover; /*--sets image to cover background --*/
+        background-position: center center; /*-- positions image horiz. and vert. center --*/
+        border-radius: 4px 4px 0 0; /*-- rounds top-left and top-right edges --*/
+      }
+      /*-- Card Backgrounds --*/
+      .one .thumb {background-image: url('https://picsum.photos/300/200/?image=09');}
+      .two .thumb {background-image: url('https://picsum.photos/300/200/?image=24');}
+      .three .thumb {background-image: url('https://picsum.photos/300/200/?image=35');}
+      .four .thumb {background-image: url('https://picsum.photos/300/200/?image=44');}
+      .five .thumb {background-image: url('https://picsum.photos/300/200/?image=54');}
+      .six .thumb {background-image: url('https://picsum.photos/300/200/?image=59');}
+      .seven .thumb {background-image: url('https://picsum.photos/300/200/?image=71');}
+      .eight .thumb {background-image: url('https://picsum.photos/300/200/?image=32');}
+      .nine .thumb {background-image: url('https://picsum.photos/300/200/?image=19');}
+      .ten .thumb {background-image: url('https://picsum.photos/300/200/?image=06');}
+      .eleven .thumb {background-image: url('https://picsum.photos/300/200/?image=23');}
+      .twelve .thumb {background-image: url('https://picsum.photos/300/200/?image=60');}
+      /*----*/
+      .card-content {
+        padding: 0 .5em .7em .5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /*-- vertically centers card content --*/
+      }
+      .card-title {
+        margin: 1rem 0 0 0;
+        text-transform: uppercase; /*--all caps text --*/
+        align-self: flex-start; /*-- positions at beginning --*/
+        color: var(--text);
+      }
+      .card-text {
+        font-size: .80em;
+        line-height: 1.2;
+        align-self: flex-start;
+        color: var(--text);
+      }
+      button.card-more {
+        background: transparent;
+        padding: .45em .7em .4em .7em;
+        border-radius: 200px;
+        font-size: .7em;
+        text-decoration: none;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+      button.card-more, button.card-more:visited {
+        color: var(--prime);
+        border: 1.5px solid var(--prime);
+        transition: all 250ms ease-in-out;
+      }
+      button.card-more:hover, button.card-more:active {
+        color: var(--accent);
+        border-color: var(--accent);
+      }
+      /*-- Modal Styles --*/
+      /* The Modal (background) */
+      .modal {
+         display: none;/*-- hidden by default --*/
+         position: fixed; /*-- doesn't move on the screen --*/
+         z-index: 1100; /*-- sets higher than anything else so modal is in the very front --*/
+         left: 0; /*-- positions at zero pixels from the left --*/
+         top: 0; /*-- positions at zero pixels from the top --*/
+         width: 100%; /*-- fills the space --*/
+         height: 100%; /*-- fills the space --*/
+         overflow: auto; /*-- handles overflow as normal. --*/
+         background-color: rgba(10, 10, 10, .4); /*--slightly transparent--*/
+      }
+      .modal-content {
+         background-color: var(--bg);
+         color: var(--text);
+         margin: 1rem auto;
+         padding: 1em;
+         width: 92%;
+         border-radius: 4px;
+         animation: fadein .3s ease-in-out; /*-- sets animation properties: name, duration, easing --*/
+      }
+      @keyframes fadein {
+        from{transform:scale(.1);} /*-- modal grows from very small to full size--*/
+      }
+      .close {
+         color: var(--text);
+         font-size: 2.5em;
+         font-weight: bold;
+         position: absolute; /*-- always at the top right of the modal --*/
+         top: 5px;
+         right: 4.25%;
+         transition: all .2s ease-in;
+         text-shadow: 2px 2px 5px #FAFAFA,
+                     -2px -2px 5px #FAFAFA,
+                     2px -2px 5px #FAFAFA,
+                     -2px 2px 5px #FAFAFA;
+      }
+      .close:hover,
+      .close:focus {
+         color: var(--accent);
+         text-decoration: none;
+         cursor: pointer;
+      }
+      .modal-body {
+        display: grid;
+        grid-template-columns: 1fr; /*-- default modal grid (for mobile screens)--*/
+        grid-gap: 2em;
+      }
+      .eg-text {
+        align-self: center;
+      }
+      .eg-text h3 {
+        margin-top: 0;
+        padding-top: 0;
+      }
+      .modal-body img {
+        margin-bottom: 1.5em;
+        width: 100%;
+        height: auto;
+      }
+      @media screen and (min-width: 1280px) { /*-- better modal display on largest screens --*/
+        .modal-body {grid-template-columns: 7fr 5fr;}
 
-  .grid-item2 {
-    height: auto;
-    padding: 0em;
-    background-color:black;
-    justify-content:;
-  }
+      }
 
-  .grid-container2 {
-    grid-template-areas:
-                        "one2 two2"
-                        "three2 four2";
+      :root {/*-- Sets color variables --*/
+  --prime: #222;
+  --text: #333;
+  --rev-text: #EEE;
+  --accent: #2E9CCA;
+  --bg: #EEE;
+}
 
-  }
-  .one2 {
-    grid-area: one2;
-    background-image: url("../img/zebrasunset.jpg");
-    background-size: cover;
-  }
-  .two2 {
-    grid-area: two2;
-    background-image: url("../img/biting.jpg");
-    background-color: black;
-
-  }
-  .three2 {
-    grid-area: three2;
-    background-image: url("../img/biting.jpg");
-    background-size: cover; }
-
-.four2 {
-      grid-area: four2;
-      background-image: url("../img/bull.jpg");
-      background-size: cover;
+i.fas { /*-- adds a little padding left and right on fontawesome icons --*/
+  padding: 0 .33em;
+}
