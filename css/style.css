@@ -11,34 +11,62 @@ body{
 }
 
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  background-color: #333;
-  color: #DDD;
-  padding: 1em;
-  flex-direction: column;
+/*------------------
+--  Nav Styles  --
+------------------*/
+.topnav { /*-- main navigation element --*/
+  margin-top: -.25rem; /*-- uses negative margin to pull menu to top --*/
+  padding-bottom: .5rem; /*-- creates a little space below nav --*/
+  background-color: var(--prime);
+  display: flex; /*-- creates a flex container --*/
+  flex-direction: column; /*-- direction is for MOBILE screen sizes --*/
+  justify-content: space-around; /*-- lays out menu items--*/
+  align-items: stretch; /*-- sets menu items to fill space vertically --*/
+  align-content: center; /*-- vertically aligns menu items to center --*/
+  position: fixed; /*-- makes the navbar stay at the top, even when scrolling--*/
+  z-index: 1000; /*-- makes navbar always sit on top--*/
+  width: 100%; /*-- makes navbar occupy full width of the page --*/
 }
+a.nav-item {
+  position: relative; /*-- overcomes negative margin in above rule --*/
+  top: 4px; /*-- tweaks vertical position --*/
+  text-align: center; /*-- center-aligns all text inside their boxes --*/
+  padding: .75em; /*-- provides padding inside menu items --*/
+  margin: auto 0; /*-- centers menu text vertically --*/
+  color: var(--rev-text);
+  transition: color 250ms ease-in-out; /*-- specifies transition, duration, and easing --*/
+}
+a.nav-item:hover {
+  color: var(--accent);
+  cursor: pointer; /*-- changes menu items to pointer on hover --*/
+}
+.label {
+  font-size: 1rem;
+}
+.nav-item.trigram {
+  display: none; /*-- hides trigram (hamburger menu button) by default --*/
+  text-decoration: none; /*-- removes underline --*/
+  font-size: 2rem; /*-- makes much larger than normal text--*/
+}
+/*-- Mobile Nav Queries --*/
+/*--At screens BELOW 768px, hides nav menu items and displays trigram --*/
+@media screen and (max-width: 767px) {
+  .topnav a, .topnav span {display: none;}
+  .topnav a.trigram {display:inherit; position:absolute; right:4%; font-size:2em; padding: .25em; background:var(--prime);}
+}
+/*-- At screens BELOW 768px,  rules for mobile nav--*/
+@media screen and (max-width: 767px) {
+  .topnav.responsive {align-items: center;} /*-- vertically centers--*/
+  .topnav.responsive a, .topnav.responsive span {display:inherit;} /*-- makes trigram visible --*/
+  .topnav.responsive a:first-child {margin-top:1em;} /*-- adds space above first item --*/
+  .topnav.responsive a:not(:last-child) {display:inherit; padding-top:1em;} /*-- makes items visible (but not the trigram) and adds space above them--*/
+  .topnav.responsive a.more {margin-bottom: 1em;} /*-- adds margin below bottom item --*/
+  .topnav.responsive a.trigram {visibility:hidden; transition:none;} /*-- hides trigram when open --*/
+  .topnav.responsive a.trigram:after {content:'\000D7'; visibility:visible; text-indent: -.5em;} /*-- replaces trigram sign with x-sign on mobile. --*/
+}
+/*-- At screens 768px and ABOVE, set normal menu defaults --*/
 @media screen and (min-width: 768px) {
-  nav {flex-direction: row;}
-}
-nav a {
-  color: #DDD;
-  text-decoration: none;
-}
-.trigram {
-  font-size: 1.75em;
-  display: none;
-}
-@media screen and (max-width: 767px) {
-  .topnav a {display: none;}
-  .topnav a.trigram {display: inherit; align-self: flex-end;}
-}
-@media screen and (max-width: 767px) {
-  .topnav.responsive {align-items: center;}
-  .topnav.responsive a {display:inherit;}
-  .topnav.responsive a.trigram {visibility: hidden; position: absolute; right: 3%; top: 2%;}
-  .topnav.responsive a.trigram::after {content:'\000D7'; visibility:visible; text-indent: -.5em;}
+  .topnav {display: flex; flex-direction: row; justify-content: space-around;}
 }
 
 
@@ -397,10 +425,9 @@ body {
 
       }
       .modal-body img {
-        margin-bottom: 0.5em;
         width: 75%;
         height: 75%;
-        margin-left: 7.1em;
+        margin-left: 7.2em;
         margin-top: 0.5em;
         border-radius: 0.5em 0.5em 0.5em 0.5em;
       }
@@ -412,7 +439,7 @@ body {
       :root {/*-- Sets color variables --*/
   --prime: #222;
   --text: white;
-  --rev-text:;
+  --rev-text:white;
   --accent: #2E9CCA;
   --bg: #EEE;
 }
@@ -425,5 +452,6 @@ footer {
   background-color: black;
   padding: .25rem;
   text-align: center;
+  color: white;
 
 }
