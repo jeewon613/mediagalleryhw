@@ -357,10 +357,10 @@ body {
          width: 100%; /*-- fills the space --*/
          height: 100%; /*-- fills the space --*/
          overflow: auto; /*-- handles overflow as normal. --*/
-         background-color: rgba(10, 10, 10, .4); /*--slightly transparent--*/
+         background-color: rgb(100,100,100, .6); /*--slightly transparent--*/
       }
       .modal-content {
-         background-color: var(--bg);
+        background-color: rgb(0,0,0, .8); /*--slightly transparent--*/
          color: var(--text);
          margin: 1rem auto;
          padding: 1em;
@@ -376,13 +376,13 @@ body {
          font-size: 2.5em;
          font-weight: bold;
          position: absolute; /*-- always at the top right of the modal --*/
-         top: 5px;
-         right: 4.25%;
+         top: 0.5em;
+         right: 16%;
          transition: all .2s ease-in;
-         text-shadow: 2px 2px 5px #FAFAFA,
-                     -2px -2px 5px #FAFAFA,
-                     2px -2px 5px #FAFAFA,
-                     -2px 2px 5px #FAFAFA;
+         text-shadow: 1px 1px 4px #FAFAFA,
+                     -1px -1px 4px #FAFAFA,
+                     1px -1px 4px #FAFAFA,
+                     -1px 1px 4px #FAFAFA;
       }
       .close:hover,
       .close:focus {
