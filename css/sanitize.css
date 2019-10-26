@@ -204,7 +204,6 @@ small {
 audio,
 canvas,
 iframe,
-img,
 svg,
 video {
   vertical-align: middle;
@@ -232,9 +231,7 @@ audio:not([controls]) {
  * Remove the border on images inside links in IE 10-.
  */
 
-img {
-  border-style: none;
-}
+
 
 /**
  * Change the fill color to match the text color in all browsers (opinionated).
