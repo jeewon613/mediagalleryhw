@@ -17,7 +17,7 @@ body{
 .topnav { /*-- main navigation element --*/
   margin-top: -.25rem; /*-- uses negative margin to pull menu to top --*/
   padding-bottom: .5rem; /*-- creates a little space below nav --*/
-  background-color: var(--prime);
+  background-color: black;
   display: flex; /*-- creates a flex container --*/
   flex-direction: column; /*-- direction is for MOBILE screen sizes --*/
   justify-content: space-around; /*-- lays out menu items--*/
@@ -148,7 +148,7 @@ a.nav-item:hover {
 /* Hide the images by default */
 .mySlides {
   display: none;
-  max-height: 38em;
+  max-height: 40em;
   overflow: hidden;
 
 }
