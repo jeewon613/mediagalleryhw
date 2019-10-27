@@ -148,7 +148,7 @@ a.nav-item:hover {
 /* Hide the images by default */
 .mySlides {
   display: none;
-  max-height: 40em;
+  max-height: 42em;
   overflow: hidden;
 
 }
@@ -183,8 +183,8 @@ a.nav-item:hover {
 /* Caption text */
 .text {
   color: #f2f2f2;
-  font-size: 3em;
-  padding: 10em 12px;
+  font-size: 2.5em;
+  padding: 11em 12px;
   position:absolute;
   bottom: 8px;
   width: 100%;
