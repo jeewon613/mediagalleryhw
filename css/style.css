@@ -276,7 +276,6 @@ body {
 
 }
 
-/* Create four equal columns that sits next to each other */
 .column {
   -ms-flex: 25%; /* IE10 */
   flex: 25%;
@@ -293,7 +292,6 @@ body {
 
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
   .column {
     -ms-flex: 50%;
@@ -302,7 +300,6 @@ body {
   }
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {
     -ms-flex: 100%;
@@ -313,14 +310,14 @@ body {
 
 .main-grid {
         margin: 3em;
-        padding: 3em; /*-- adds padding inside grid wrap --*/
-        display: grid; /*-- sets display mode --*/
-        grid-gap: 2rem; /*-- creates gutters --*/
-        grid-template-columns: 1fr; /*-- default mobile layout is 1-column--*/
+        padding: 3em;
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: 1fr;
         background: url("https://image.freepik.com/free-photo/sand-texture-beach-as-background_63047-198.jpg");
         border-radius: 4px 4px 0 0; /*-- rounds top-left and top-right edges --*/
       }
-      /*-- grid media queries--*/
+
       @media screen and (min-width: 550px) { /*-- at screens between 550 and 767 --*/
         .main-grid {grid-template-columns: repeat(1, 1fr);}  /*-- 2 columnns --*/
       }
@@ -333,19 +330,19 @@ body {
       @media screen and (min-width: 1280px) {/*-- at screens 1280 and above --*/
         .main-grid {grid-template-columns: repeat(3, 1fr);} /*-- 4 columnns --*/
       }
-      /*-- media card styles -- */
+
       .main-grid-item {
-        border-radius: 4px;  /*-- rounds borders --*/
-        padding: 1em; /*-- adds space inside --*/
+        border-radius: 4px;
+        padding: 1em;
         background-color: black;
       }
       .thumb {
-        padding-bottom: 90%; /*-- creates ~16:9 ratio--*/
-        background-size: cover; /*--sets image to cover background --*/
-        background-position: center center; /*-- positions image horiz. and vert. center --*/
-        border-radius: 4px 4px 0 0; /*-- rounds top-left and top-right edges --*/
+        padding-bottom: 90%;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 4px 4px 0 0;
       }
-      /*-- Card Backgrounds --*/
+
       .one .thumb {background-image:  url("../img/giraffesunset.jpg");}
       .two .thumb {background-image: url('../img/antelope.jpg');}
       .three .thumb {background-image: url('../img/biting.jpg');}
@@ -355,18 +352,18 @@ body {
       .seven .thumb {background-image: url('../img/elephant.jpg');}
       .eight .thumb {background-image: url('../img/guy.jpg');}
       .nine .thumb {background-image: url('../img/tour.jpg');}
-      /*----*/
+
       .card-content {
         padding: 0 .5em .7em .5em;
         display: flex;
         flex-direction: column;
-        align-items: center; /*-- vertically centers card content --*/
+        align-items: center;
       }
       .card-title {
         font-family: 'Staatliches';
         font-size: 1.2em;
-        text-transform: uppercase; /*--all caps text --*/
-        align-self: center; /*-- positions at beginning --*/
+        text-transform: uppercase;
+        align-self: center;
         color: lightgray;
       }
 
@@ -386,36 +383,36 @@ body {
         color: var(--accent);
         border-color: var(--accent);
       }
-      /*-- Modal Styles --*/
-      /* The Modal (background) */
+
+
       .modal {
-         display: none;/*-- hidden by default --*/
-         position: fixed; /*-- doesn't move on the screen --*/
-         z-index: 1100; /*-- sets higher than anything else so modal is in the very front --*/
-         left: 0; /*-- positions at zero pixels from the left --*/
-         top: 0; /*-- positions at zero pixels from the top --*/
-         width: 100%; /*-- fills the space --*/
-         height: 100%; /*-- fills the space --*/
-         overflow: auto; /*-- handles overflow as normal. --*/
-         background-color: rgb(100,100,100, .6); /*--slightly transparent--*/
+         display: none;
+         position: fixed;
+         z-index: 1100;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         overflow: auto;
+         background-color: rgb(100,100,100, .6);
       }
       .modal-content {
-        background-color: rgb(0,0,0, .8); /*--slightly transparent--*/
+        background-color: rgb(0,0,0, .8);
          color: var(--text);
          margin: 1rem auto;
          padding: 1em;
          width: 70%;
          border-radius: 4px;
-         animation: fadein .3s ease-in-out; /*-- sets animation properties: name, duration, easing --*/
+         animation: fadein .3s ease-in-out;
       }
       @keyframes fadein {
-        from{transform:scale(.1);} /*-- modal grows from very small to full size--*/
+        from{transform:scale(.1);}
       }
       .close {
          color: var(--text);
          font-size: 2.5em;
          font-weight: bold;
-         position: absolute; /*-- always at the top right of the modal --*/
+         position: absolute;
          top: 0.5em;
          right: 16%;
          transition: all .2s ease-in;
@@ -453,12 +450,12 @@ body {
         margin-top: 0.5em;
         border-radius: 0.5em 0.5em 0.5em 0.5em;
       }
-      @media screen and (min-width: 1280px) { /*-- better modal display on largest screens --*/
+      @media screen and (min-width: 1280px) {
         .modal-body {grid-template-columns: 1fr;}
 
       }
 
-      :root {/*-- Sets color variables --*/
+      :root {
   --prime: #222;
   --text: white;
   --rev-text:white;
@@ -466,7 +463,7 @@ body {
   --bg: #EEE;
 }
 
-i.fas { /*-- adds a little padding left and right on fontawesome icons --*/
+i.fas { 
   padding: 0 .33em;
 }
 
